@@ -101,7 +101,7 @@ def jugar():
 #  I N I C I O    P R O G R A M A
 #
 #
-avisarInicioPartida()
+mostrarReglasJuego()
 mostrarCartas()
 jugar()
 avisarFinPartida()
