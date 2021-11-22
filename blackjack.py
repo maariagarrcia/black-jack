@@ -69,3 +69,6 @@ def avisarInicioPartida():
     print(" El que se aproxime mas a 21 sin pasarse gana!!!")
     print("---- EMPIEZA LA PARTIDA ----")
 
+def avisarFinPartida():
+    print(Fore.YELLOW + "---- LA PARTIDA HA FINALIZADO ---- ")
+    print()
