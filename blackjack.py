@@ -84,7 +84,7 @@ def jugar():
     carta= choice(lista_cartas)
     score += cartas[carta]
     print(carta, end= " ")
-    print(" su puntuacion es de", score)
+    print(" >>> su puntuacion es de", score)
 
     main_banca= sample(lista_cartas,2)
     score_banca= sum(cartas[carta] for carta in main_banca)
@@ -92,5 +92,12 @@ def jugar():
                                                             main_banca[1],
                                                             score_banca))
 
-
-
+#
+#
+#  I N I C I O    P R O G R A M A
+#
+#
+avisarInicioPartida()
+mostrarCartas()
+jugar()
+avisarFinPartida()
