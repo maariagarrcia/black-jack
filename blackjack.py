@@ -72,3 +72,25 @@ def avisarInicioPartida():
 def avisarFinPartida():
     print(Fore.YELLOW + "---- LA PARTIDA HA FINALIZADO ---- ")
     print()
+
+def jugar():
+    print (" 3) Black Jack")
+    lista_cartas= list(cartas)
+
+    print(" Ha seleccionado:" end=" ")
+    carta= choice(lista_cartas)
+    score= cartas[carta]
+    print(carta, end= "")
+    carta= choice(lista_cartas)
+    score += cartas[carta]
+    print(carta, end= " ")
+    print(" su puntuacion es de", score)
+
+    main_banca= sample(lista_cartas,2)
+    score_banca= sum(cartas[carta] for carta in main_banca)
+    print("La banca tiene: {} {} >> su score es {}".format(main_banca[0],
+                                                            main_banca[1],
+                                                            score_banca))
+
+
+
