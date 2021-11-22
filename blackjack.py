@@ -60,15 +60,18 @@ def mostrarCartas():
 
 
 
-def avisarInicioPartida():
+def mostrarReglasJuego():
     # Preparativos antes de empezar la partida
-    print(Fore.YELLOW)
+    print(Fore.LIGHTYELLOW_EX)
     print()
+    print("B L A C K   J A C K")
+    print("=====================")
     print(" Hola, soy el ordenador y vamos a jugar al blackjack (21)")
+    print(" Vamos a jugar de la siguiente forma (segun enunciado practica)")
     print(" 1) El juagadpr escogera 2  cartas a su gusto")
     print(" 2) El ordenador escogera dos cartas al azar")
     print(" El que se aproxime mas a 21 sin pasarse gana!!!")
-    print("---- EMPIEZA LA PARTIDA ----")
+    print()
 
 def avisarFinPartida():
     print(Fore.YELLOW + "---- LA PARTIDA HA FINALIZADO ---- ")
