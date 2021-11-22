@@ -25,10 +25,9 @@
 #
 
 from random import choice, sample
-
+from colorama import Fore
 
 # En este diccionario se guardan las cartas y su puntuacion
-
 cartas = {
     chr(0x1f0a1): 11,
     chr(0x1f0a2): 2,
@@ -45,8 +44,9 @@ cartas = {
     chr(0x1f0ae): 10,
 }
 
+#
 #  F U N C I O N E S
-
+#
 def mostrarCartas():
     print(Fore.YELLOW)
     print (" Relacion de cartas y puntuaciones")
