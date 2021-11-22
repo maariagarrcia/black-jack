@@ -26,6 +26,7 @@
 
 from random import choice, sample
 from colorama import Fore
+import operator
 
 # En este diccionario se guardan las cartas y su puntuacion
 cartas = {
@@ -47,15 +48,15 @@ cartas = {
 #
 #  F U N C I O N E S
 #
+
 def mostrarCartas():
-    print(Fore.YELLOW)
-    print (" Relacion de cartas y puntuaciones")
-    print (" Ordenadas por puntuacion descendente")
-    for key, value in sorted(cartas.items(), cartas.value(), reverse= True):
-        print (value, key)
-    
-    print("Cartas: {}".format(" ".join(cartas.keys())))
-    print("Puntos: {}".format(list(cartas.values())))
+    print(Fore.YELLOW + "--- Baraja ordenada por puntuaciones ---")
+    cartasOrdenadas=  sorted(cartas.items(), key=operator.itemgetter(1))
+    for key, value in cartasOrdenadas:
+        print ("(" +key+ " " + str(value) +") ", end="")
+     
+    print()
+    print()
 
 
 
@@ -78,7 +79,7 @@ def jugar():
     lista_cartas= list(cartas)
 
     print(" Ha seleccionado:" end=" ")
-    carta= choice(lista_cartas)
+    carta= choice(lista_cartas) 
     score= cartas[carta]
     print(carta, end= "")
     carta= choice(lista_cartas)
