@@ -98,10 +98,11 @@ def turnobanca(listaCartas):
     puntuacion= sum(cartas[carta] for carta in cartas_banca)
     print(
         (Fore.WHITE + "La banca tiene: {} {} >> su puntucion es" + 
-        Fore.RED + "{}".format(cartas_banca[0],cartas_banca[1], puntuacion)
-    )
-    return puntuacion
+        Fore.RED + "{}").format(cartas_banca[0],cartas_banca[1], puntuacion)
+        )
 
+    return puntuacion
+   
 def mostrarGanador(puntosJugador, puntosBanca):
     # Esta funcion aunque el enunciado no lo piide muestra el ganador!
     # Sacando solo dos cartas en realidad no9 hay forma de pasarse de 21
