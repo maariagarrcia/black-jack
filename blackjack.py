@@ -64,7 +64,7 @@ def mostrarReglasJuego():
     # Preparativos antes de empezar la partida
     print(Fore.LIGHTYELLOW_EX)
     print()
-    print("B L A C K   J A C K")
+    print("B l a c k j a c k")
     print("=====================")
     print(" Hola, soy el ordenador y vamos a jugar al blackjack (21)")
     print(" Vamos a jugar de la siguiente forma (segun enunciado practica)") 
@@ -95,13 +95,32 @@ def turnobanca(listaCartas):
     cartas_banca= sample(listaCartas, 2)
     
     # Calcular y devolver la puntuacion de la banca
-    puntuacion= sum(cartas[carta] for cart in cartas_banca)
+    puntuacion= sum(cartas[carta] for carta in cartas_banca)
     print(
         (Fore.WHITE + "La banca tiene: {} {} >> su puntucion es" + 
         Fore.RED + "{}".format(cartas_banca[0],cartas_banca[1], puntuacion)
     )
+    return puntuacion
 
-def avisarFinPartida():
+def mostrarGanador(puntosJugador, puntosBanca):
+    # Esta funcion aunque el enunciado no lo piide muestra el ganador!
+    # Sacando solo dos cartas en realidad no9 hay forma de pasarse de 21
+    # pero igualmente lo he contemplado
+    print(Fore.WHITE, end= " " )
+    if puntosJugador>21:
+        print("El jugador se ha pasado de 21 >>>> " + Fore.RED + "La banca gana")
+    elif puntosBanca<21:
+        print(" La banca se ha pasado de 21 >>>" + Fore.RED + "El jugador gana" )
+    elif puntosJugador>puntosBanca:
+        print("El  jugador ha conseguido mejor puntuacion")
+    else:
+        print(" La banca ha conseguido mejor puntuacion >>>" + Fore.RED + " La banca gana" )
+
+
+
+
+
+
     print(Fore.YELLOW + "---- LA PARTIDA HA FINALIZADO ---- ")
     print()
 
