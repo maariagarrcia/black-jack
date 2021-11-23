@@ -88,18 +88,17 @@ def turnodelJugador(listaCartas):
     print(" >>> su puntuacion es de"+ Fore.RED, puntuacion)
     return puntuacion
 
-def turnobanca(listaCartas)
+def turnobanca(listaCartas):
     # Seleccionar dos cartas aleatoriamente a la vez 
     # El metodo sample() selecciona "n" items de una lista y los devuelve
     # en otra lista. En nuestro caso le pedimos que seleccione 2 items.
-    cartasbanca= sample(listaCartas, 2)
+    cartas_banca= sample(listaCartas, 2)
     
     # Calcular y devolver la puntuacion de la banca
-    puntuacion= sum(cartas[carta] for cart in cartasbanca)
+    puntuacion= sum(cartas[carta] for cart in cartas_banca)
     print(
         (Fore.WHITE + "La banca tiene: {} {} >> su puntucion es" + 
-        Fore.RED + "{}".format(cartasbanca[1], puntuacion)
-
+        Fore.RED + "{}".format(cartas_banca[0],cartas_banca[1], puntuacion)
     )
 
 def avisarFinPartida():
