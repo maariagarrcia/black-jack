@@ -64,8 +64,8 @@ def mostrarReglasJuego():
     # Preparativos antes de empezar la partida
     print(Fore.LIGHTYELLOW_EX)
     print()
-    print("B l a c k j a c k")
-    print("=====================")
+    print(" B l a c k j a c k")
+    print("====================")
     print(" Hola, soy el ordenador y vamos a jugar al blackjack (21)")
     print(" Vamos a jugar de la siguiente forma (según enunciado práctica)") 
     print(" 1) El jugador escogerá 2  cartas a su gusto")
@@ -110,7 +110,7 @@ def mostrarGanador(puntosJugador, puntosBanca):
     print(Fore.WHITE, end= " " )
     if puntosJugador>21:
         print("El jugador se ha pasado de 21 >>>> " + Fore.RED + "La banca gana")
-    elif puntosBanca<21:
+    elif puntosBanca>21:
         print(" La banca se ha pasado de 21 >>>" + Fore.RED + "El jugador gana" )
     elif puntosJugador>puntosBanca:
         print("El  jugador ha conseguido mejor puntuacion")
