@@ -88,7 +88,7 @@ def turnodelJugador(listaCartas):
     print(" >>> su puntuacion es de"+ Fore.RED, puntuacion)
     return puntuacion
 
-def turnobanca(listaCartas):
+def turnoBanca(listaCartas):
     # Seleccionar dos cartas aleatoriamente a la vez 
     # El metodo sample() selecciona "n" items de una lista y los devuelve
     # en otra lista. En nuestro caso le pedimos que seleccione 2 items.
@@ -99,7 +99,7 @@ def turnobanca(listaCartas):
     print(
         (Fore.WHITE + "La banca tiene: {} {} >> su puntucion es" + 
         Fore.RED + "{}").format(cartas_banca[0],cartas_banca[1], puntuacion)
-        )
+    )
 
     return puntuacion
    
@@ -119,28 +119,23 @@ def mostrarGanador(puntosJugador, puntosBanca):
 
 
 
-
-
-
     print(Fore.YELLOW + "---- LA PARTIDA HA FINALIZADO ---- ")
     print()
 
 def jugar():
-    print (" 3) Black Jack")
+    # Crear una lista a partir del diccionario que contiene las cartas
+    # Se necesita una lista para luego poder usar el metodo choice() y tambien el sample
+    # que no funcionan directamente sobre diccionarios sino sobre listas
     lista_cartas= list(cartas)
 
-    
-    
-    
-    
-    score += cartas[carta]
-    
+    puntosJugador = turnodelJugador(lista_cartas)
+    puntosBanca = turnoBanca(lista_cartas)
 
-    main_banca= sample(lista_cartas,2)
-    score_banca= sum(cartas[carta] for carta in main_banca)
-    print("La banca tiene: {} {} >> su score es {}".format(main_banca[0],
-                                                            main_banca[1],
-                                                            score_banca))
+    # A esta  funcion le pasamos  las puntuaciones respectivas para que pueda
+    # "decidir" quien ha sido el ganador
+    mostrarGanador(puntosJugador,puntosBanca)
+
+    
 
 #
 #
