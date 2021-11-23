@@ -8,15 +8,15 @@
 # Método de Random "sample" ......... https://www.w3schools.com/python/ref_random_sample.asp
 # Método de String "join()".......... https://www.w3schools.com/python/ref_string_join.asp
 #
-# Funcion "format()"................. https://www.w3schools.com/python/ref_func_format.asp
-# Funcioon "sorted()"................ https://www.w3schools.com/python/ref_func_sorted.asp
-# Funcion "sum()" ................... https://www.w3schools.com/python/ref_func_sum.asp
+# Función "format()" ................. https://www.w3schools.com/python/ref_func_format.asp
+# Función "sorted()" ................ https://www.w3schools.com/python/ref_func_sorted.asp
+# Función "sum()"  ................... https://www.w3schools.com/python/ref_func_sum.asp
 #
 
 # D E S C R I P C I O N     T A R E A    R E A L I Z A D A:
 #
 # 0) Estudiar el código suministrado en la tarea 
-# 1) Buscar documentación sobre los tipos de datos, funcions y métodos que se van a necesitar
+# 1) Buscar documentación sobre los tipos de datos, funciones y métodos que se van a necesitar
 # 2) Crear un nuevo código usando lo aprendido previamente:
 #       · Hacer un código lo más legible posible
 #       · Hacer el código lo más modular posible usando funciones (no se requieren módulos)
@@ -28,7 +28,7 @@ from random import choice, sample
 from colorama import Fore
 import operator
 
-# En este diccionario se guardan las cartas y su puntuacion
+# En este diccionario se guardan las cartas y su puntuación
 cartas = {
     chr(0x1f0a1): 11,
     chr(0x1f0a2): 2,
@@ -67,15 +67,15 @@ def mostrarReglasJuego():
     print("B l a c k j a c k")
     print("=====================")
     print(" Hola, soy el ordenador y vamos a jugar al blackjack (21)")
-    print(" Vamos a jugar de la siguiente forma (segun enunciado practica)") 
-    print(" 1) El juagadpr escogera 2  cartas a su gusto")
-    print(" 2) El ordenador escogera dos cartas al azar")
+    print(" Vamos a jugar de la siguiente forma (según enunciado práctica)") 
+    print(" 1) El jugador escogerá 2  cartas a su gusto")
+    print(" 2) El ordenador escogerá dos cartas al azar")
     print(" El que se aproxime mas a 21 sin pasarse gana!!!")
     print()
 
 def turnodelJugador(listaCartas):
     # Seleccionar la PRIMERA carta del jugador
-    print(Fore.WHITE + " El jugador a seleccionado:", end=" " )
+    print(Fore.WHITE + " El jugador ha seleccionado:", end=" " )
     carta_1= choice(listaCartas)
     print(carta_1, end= " " )
 
@@ -83,7 +83,7 @@ def turnodelJugador(listaCartas):
     carta_2= choice(listaCartas) 
     print(carta_2, end= " " )
     
-    # Calcular y devolver la puntuacion del jugador
+    # Calcular y devolver la puntuación del jugador
     puntuacion= cartas[carta_1] + cartas[carta_2]
     print(" >>> su puntuacion es de"+ Fore.RED, puntuacion)
     return puntuacion
@@ -94,10 +94,10 @@ def turnoBanca(listaCartas):
     # en otra lista. En nuestro caso le pedimos que seleccione 2 items.
     cartas_banca= sample(listaCartas, 2)
     
-    # Calcular y devolver la puntuacion de la banca
+    # Calcular y devolver la puntuación de la banca
     puntuacion= sum(cartas[carta] for carta in cartas_banca)
     print(
-        (Fore.WHITE + "La banca tiene: {} {} >> su puntucion es" + 
+        (Fore.WHITE + "La banca tiene: {} {} >> su puntucioó es" + 
         Fore.RED + "{}").format(cartas_banca[0],cartas_banca[1], puntuacion)
     )
 
@@ -119,19 +119,19 @@ def mostrarGanador(puntosJugador, puntosBanca):
 
 
 
-    print(Fore.YELLOW + "---- LA PARTIDA HA FINALIZADO ---- ")
+    print(Fore.YELLOW + "--- LA PARTIDA HA FINALIZADO --- ")
     print()
 
 def jugar():
     # Crear una lista a partir del diccionario que contiene las cartas
-    # Se necesita una lista para luego poder usar el metodo choice() y tambien el sample
+    # Se necesita una lista para luego poder usar el metodo choice() y también el sample
     # que no funcionan directamente sobre diccionarios sino sobre listas
     lista_cartas= list(cartas)
 
     puntosJugador = turnodelJugador(lista_cartas)
     puntosBanca = turnoBanca(lista_cartas)
 
-    # A esta  funcion le pasamos  las puntuaciones respectivas para que pueda
+    # A esta  función le pasamos  las puntuaciones respectivas para que pueda
     # "decidir" quien ha sido el ganador
     mostrarGanador(puntosJugador,puntosBanca)
 
@@ -144,5 +144,7 @@ def jugar():
 #
 mostrarReglasJuego()
 mostrarCartas()
+
+print(Fore.WHITE + "--- Inicio Partida ---")
 jugar()
-avisarFinPartida()
+print(Fore.WHITE + "--- Fin Partida ---")
