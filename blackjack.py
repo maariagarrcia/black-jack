@@ -75,9 +75,9 @@ def mostrarReglasJuego():
 
 def turnodelJugador(listaCartas):
     # Seleccionar la PRIMERA carta del jugador
-    print(Fore.WHITE + " El jugador a seleccionado:" end=" " )
+    print(Fore.WHITE + " El jugador a seleccionado:", end=" " )
     carta_1= choice(listaCartas)
-    print(carta_1 end= " " )
+    print(carta_1, end= " " )
 
     # Seleccionar la SEGUNDA carta del jugador
     carta_2= choice(listaCartas) 
@@ -85,9 +85,22 @@ def turnodelJugador(listaCartas):
     
     # Calcular y devolver la puntuacion del jugador
     puntuacion= cartas[carta_1] + cartas[carta_2]
-    print(" >>> su puntuacion es de", score)
+    print(" >>> su puntuacion es de"+ Fore.RED, puntuacion)
     return puntuacion
 
+def turnobanca(listaCartas)
+    # Seleccionar dos cartas aleatoriamente a la vez 
+    # El metodo sample() selecciona "n" items de una lista y los devuelve
+    # en otra lista. En nuestro caso le pedimos que seleccione 2 items.
+    cartasbanca= sample(listaCartas, 2)
+    
+    # Calcular y devolver la puntuacion de la banca
+    puntuacion= sum(cartas[carta] for cart in cartasbanca)
+    print(
+        (Fore.WHITE + "La banca tiene: {} {} >> su puntucion es" + 
+        Fore.RED + "{}".format(cartasbanca[1], puntuacion)
+
+    )
 
 def avisarFinPartida():
     print(Fore.YELLOW + "---- LA PARTIDA HA FINALIZADO ---- ")
