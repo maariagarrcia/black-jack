@@ -67,11 +67,27 @@ def mostrarReglasJuego():
     print("B L A C K   J A C K")
     print("=====================")
     print(" Hola, soy el ordenador y vamos a jugar al blackjack (21)")
-    print(" Vamos a jugar de la siguiente forma (segun enunciado practica)")
+    print(" Vamos a jugar de la siguiente forma (segun enunciado practica)") 
     print(" 1) El juagadpr escogera 2  cartas a su gusto")
     print(" 2) El ordenador escogera dos cartas al azar")
     print(" El que se aproxime mas a 21 sin pasarse gana!!!")
     print()
+
+def turnodelJugador(listaCartas):
+    # Seleccionar la PRIMERA carta del jugador
+    print(Fore.WHITE + " El jugador a seleccionado:" end=" " )
+    carta_1= choice(listaCartas)
+    print(carta_1 end= " " )
+
+    # Seleccionar la SEGUNDA carta del jugador
+    carta_2= choice(listaCartas) 
+    print(carta_2, end= " " )
+    
+    # Calcular y devolver la puntuacion del jugador
+    puntuacion= cartas[carta_1] + cartas[carta_2]
+    print(" >>> su puntuacion es de", score)
+    return puntuacion
+
 
 def avisarFinPartida():
     print(Fore.YELLOW + "---- LA PARTIDA HA FINALIZADO ---- ")
@@ -81,14 +97,12 @@ def jugar():
     print (" 3) Black Jack")
     lista_cartas= list(cartas)
 
-    print(" Ha seleccionado:" end=" ")
-    carta= choice(lista_cartas) 
-    score= cartas[carta]
-    print(carta, end= "")
-    carta= choice(lista_cartas)
+    
+    
+    
+    
     score += cartas[carta]
-    print(carta, end= " ")
-    print(" >>> su puntuacion es de", score)
+    
 
     main_banca= sample(lista_cartas,2)
     score_banca= sum(cartas[carta] for carta in main_banca)
